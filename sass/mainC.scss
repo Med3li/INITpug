@@ -1,0 +1,6 @@
+$colors: (
+color:silver,
+paragraph:cornflowerblue,
+);
+div.class-t{color: map-get($colors,color);}
+div.class-t p{color: map-get($colors,paragraph);user-select: none;}
