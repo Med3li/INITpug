@@ -1,8 +1,32 @@
-$colors: (
-color:purple,
-paragraph:red,
-x: none,
-);
-div.class-o{color: map-get($colors,color);}
-div.class-o p{color: map-get($colors,paragraph);
-	user-select: map-get($colors, x);}
+/* #Primary Sass file */
+/*Classes to Extend*/
+/*.class{
+*-------;
+*-------;
+*-------;
+*-------;
+*}
+*%class{
+*-------;
+*-------;
+*-------;
+*}
+
+
+*.class1{
+*@extend %class;
+*-------;
+*-------;
+*-------;
+*font:
+*    family:
+*     size:
+*     weight:
+*}
+*/
+
+/*
+*underscore dash is used for skip --watched in sass and task runner
+*_main.scss
+*@import "main";
+*/

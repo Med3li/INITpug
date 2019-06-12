@@ -1,8 +1,3 @@
-/*var gulp = require('gulp');
-var concat = require('gulp-concat');
-var prefix = require('gulp-autoprefixer');
-var sass = require('gup-sass');
-*/
 var gulp       = require('gulp'),
     concat     = require('gulp-concat'),
     prefix     = require('gulp-autoprefixer'),
@@ -11,61 +6,32 @@ var gulp       = require('gulp'),
     livereload = require('gulp-livereload'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify     = require('gulp-uglify'),
-    notify     = require('gulp-notify');
-/*
-//my first task
-gulp.task('CSSconcat',function() {
-
-return gulp.src(['dist/css/*.css'])
-        .pipe(prefix())
-        .pipe(concat('polyfills.css'))
-        .pipe(gulp.dest(['dist/css']))  //destribution
-});
-//my second task
-gulp.task('transfert',function() {
-
-return gulp.src(['js/*.js'])
-        .pipe(gulp.dest('dist/js'))  //destribution
-});
-//my 3th task
-gulp.task('JSconcat',function() {
-
-return gulp.src(['js/*.js'])
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest(['dist']))  //destribution
-});
-//my 4th task
-gulp.task('sass',function() {
-
-return gulp.src([''])
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest(['dist/css']))  //destribution
-       
-});
+    notify     = require('gulp-notify'),
+    minify     = require('gulp-clean-css');
 //my 5th task
-gulp.task('AllCssprefixer',function() {
-
-return gulp.src('dist')
-        .pipe(prefix('last 2 versions'))
-        .pipe(gulp.dest('dist'))  //destribution
+gulp.task('create-polyfill-file', function(){
+return gulp.src(['css/*.css', '!css/bootstrap- v3.3.7.css'])
+  .pipe(concat('polyfills.css'))
+  .pipe(minify({compatibility: 'ie8'}))
+  .pipe(gulp.dest('dist/css'))
+  .pipe(notify("polyfill task is done!"));
 });
-*/
 //my 6th task
 gulp.task('copy', function(){
    // require('./server.js');
-   return gulp.src(['*.extension', '!ignored file source'])//extension = js/css/pug
+   return gulp.src(['css/bootstrap- v3.3.7.css'])//extension = js/css/pug
      .pipe(gulp.dest('dist'))
-     .pipe(livereload());
+     .pipe(notify("copying files task is done!"));
 });
 //*********my 7h task
 gulp.task('sasstocss',function() {
 
 //require('./server.js');
-return gulp.src('sass/*.scss')
+return gulp.src(['sass/*.scss'])
         .pipe(sourcemaps.init())
-        .pipe(prefix('last 2 versions'))
         .pipe(concat('main.css'))
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(prefix('last 2 versions'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/css'))  //destribution
         .pipe(notify("SASS task is done!"))
@@ -98,7 +64,9 @@ gulp.task('watch', function(){
       livereload.listen()
       gulp.watch('js/*.js', gulp.series('jsminify'))
       gulp.watch('*.pug', gulp.series('pugtohtml'))
-      gulp.watch('sass/*.scss', gulp.series('sasstocss'));
+      gulp.watch(['css/*.css', '!bootstrap-v3.3.7.css'], gulp.series('create-polyfill-file'))
+      gulp.watch(['css/bootstrap- v3.3.7.css'], gulp.series('copy'))
+      gulp.watch(['sass/*.scss'], gulp.series('sasstocss'));
 });
 //Default task
 gulp.task('default', gulp.series('watch'));
