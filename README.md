@@ -37,4 +37,5 @@ This starts server on `localhost:7200` and gulp will watch for changes and autom
 - Internet Explorer 11
 - Opera (latest 2)
 - Safari (latest 2)
+
 This doesn't mean that Pug js Boilerplate cannot be used in older browsers, just that we'll ensure compatibility with the ones mentioned above.
