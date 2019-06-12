@@ -29,6 +29,7 @@ git clone https://github.com/Med3li/INITpug
 6. Run `gulp dev-dist` to compile development project for distribution
 # Developing Locally
 1. run `node server.js` or `gulp`
+
 This starts server on `localhost:7200` and gulp will watch for changes and automatically reload the browser.
 # Browser Support
 - Chrome (latest 2)
