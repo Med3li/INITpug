@@ -10,7 +10,7 @@ var gulp       = require('gulp'),
     minify     = require('gulp-clean-css');
 //my 5th task
 gulp.task('create-polyfill-file', function(){
-return gulp.src(['css/*.css', '!css/bootstrap- v3.3.7.css'])
+return gulp.src(['ss/*.css', '!**/css/bootstrap- v3.3.7.css'])
   .pipe(concat('polyfills.css'))
   .pipe(minify({compatibility: 'ie8'}))
   .pipe(gulp.dest('dist/css'))
@@ -41,7 +41,7 @@ return gulp.src(['sass/*.scss'])
 gulp.task('pugtohtml',function() {
 
 //require('./server.js');
-return gulp.src('index.pug')
+return gulp.src('pug js/*.pug')
      .pipe(pug({pretty:true})) //{pretty:true}: for pretty code
      .pipe(gulp.dest('dist'))
      .pipe(notify("HTML task is done!"))
@@ -63,7 +63,7 @@ gulp.task('watch', function(){
       require('./server.js')
       livereload.listen()
       gulp.watch('js/*.js', gulp.series('jsminify'))
-      gulp.watch('*.pug', gulp.series('pugtohtml'))
+      gulp.watch('pug js/*.pug', gulp.series('pugtohtml'))
       gulp.watch(['css/*.css', '!bootstrap-v3.3.7.css'], gulp.series('create-polyfill-file'))
       gulp.watch(['css/bootstrap- v3.3.7.css'], gulp.series('copy'))
       gulp.watch(['sass/*.scss'], gulp.series('sasstocss'));

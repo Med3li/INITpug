@@ -1,6 +1,6 @@
 {
   "name": "initpug",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "main": "index.html",
   "dependencies": {
     "static-server": "^2.2.1",
