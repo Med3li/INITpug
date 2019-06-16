@@ -1,4 +1,14 @@
 /* #Primary Sass file */
+@charset 'utf-8';
+/*start color*/
+@import 'color/colors';
+/*end color*/
+/*start typography variables*/
+@import 'base/typography';
+/*end typography variables*/
+/*start variables*/
+@import 'helpers/variables';
+/*end variables*/
 /*Classes to Extend*/
 /*.class{
 *-------;
