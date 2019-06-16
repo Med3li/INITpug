@@ -10,7 +10,7 @@ var gulp       = require('gulp'),
     minify     = require('gulp-clean-css');
 //my 5th task
 gulp.task('create-polyfill-file', function(){
-return gulp.src(['ss/*.css', '!**/css/bootstrap- v3.3.7.css'])
+return gulp.src(['css/*.css', '!css/bootstrap- v3.3.7.css'])
   .pipe(concat('polyfills.css'))
   .pipe(minify({compatibility: 'ie8'}))
   .pipe(gulp.dest('dist/css'))
