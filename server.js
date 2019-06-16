@@ -1,9 +1,9 @@
 var StaticServer = require('static-server');
 var server       = new StaticServer({
-  rootPath: './dist',            // required, the root of the server file tree
+  rootPath: 'dist',            // required, the root of the server file tree
   port: 7200                  // required, the port to listen 
 });
 
 server.start( function () {
-console.log('Server listening to', server.port, ', please! open your browser on', server.port);
+console.log('Server listening to', server.port + ', please! open your browser on localhost:' + server.port,'...'); //x,x => x x | x+x => xx
 });
