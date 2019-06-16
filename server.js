@@ -5,5 +5,5 @@ var server       = new StaticServer({
 });
 
 server.start( function () {
-console.log('Server listening to', server.port);
+console.log('Server listening to', server.port, ', please! open your browser on', server.port);
 });
