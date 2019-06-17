@@ -7,8 +7,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     notify = require('gulp-notify'),
-    minify = require('gulp-clean-css'),
-    del = require('gulp-clean');
+    minify = require('gulp-clean-css');
 //my 5th task
 gulp.task('create-polyfill-file', function() {
     return gulp
@@ -37,15 +36,6 @@ gulp.task('js-copy', function() {
         .src(['js/*.js', '!js/main.js']) //extension = js/css/pug
         .pipe(gulp.dest('dist/js'))
         .pipe(notify("js-copy task is done!"));
-});
-//*********my 11th task
-gulp.task('delete', function() {
-
-    //require('./server.js');
-    return gulp
-        .src(['dist/css/bootstrap-rtl.css', 'dist/js/main.js'])
-        .pipe(del({ force: true }))
-        .pipe(notify("Delete task is done!"));
 });
 //*********my 7th task
 gulp.task('sasstocss', function() {
