@@ -7,7 +7,8 @@ var gulp       = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify     = require('gulp-uglify'),
     notify     = require('gulp-notify'),
-    minify     = require('gulp-clean-css');
+    minify     = require('gulp-clean-css'),
+    seq        = require('run-sequence');
 //my 5th task
 gulp.task('create-polyfill-file', function(){
 return gulp.src(['css/*.css', '!css/bootstrap- v3.3.7.css'])
