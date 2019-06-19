@@ -28,7 +28,7 @@ git clone https://github.com/Med3li/INITpug
 
 6. Run `gulp dev-dist` to compile development project for distribution
 # Developing Locally
- run `npm start`for open the browser at http://localhost:7200 to see the example app .
+ run `npm start` for open the browser at http://localhost:7200 to see the example app .
 
 This starts server on `localhost:7200` and gulp will watch for changes and automatically reload the browser.
 # Browser Support
