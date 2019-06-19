@@ -5,5 +5,5 @@ var server       = new StaticServer({
 });
 
 server.start( function () {
-console.log('Server listening to', server.port + ', This starts server on http://localhost:' + server.port+'...'); //x,x => x x | x+x => xx
+console.log('Server listening to', server.port + ', This starts server on http://localhost:' + server.port+'/...'); //x,x => x x | x+x => xx
 });
