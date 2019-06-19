@@ -30,6 +30,8 @@ git clone https://github.com/Med3li/INITpug
 # Developing Locally
  run `npm start` for open the browser at http://localhost:7200 to see the example app .
 
+ run `gulp` or `gulp watch` and start your project.
+
 This starts server on `localhost:7200` and gulp will watch for changes and automatically reload the browser.
 # Browser Support
 - Chrome (latest 2)
