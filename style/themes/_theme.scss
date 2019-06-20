@@ -1,1 +1,47 @@
 /* #Default theme */
+/********************EXAMPLE OF WORK WITH THEMES**********/
+//Structure in HTML
+-BLOCK BLOCK--MODIFIER
+--BLOCK__ELEMENT
+--BLOCK__ELEMENT
+--BLOCK__ELEMENT
+//Structure in CSS
+/*specify for color*/
+/*dark theme*/
+//MODIFIER = dark-theme
+.BLOCK{
+  &.BLOCK--dark-theme{
+    & .BLOCK__ELEMENT{
+		color:blue;
+		background-color: silver;
+	}
+	& .BLOCK__ELEMENT{
+		color:red;
+		background-color: silver;
+	}
+}}
+/*light theme*/
+//MODIFIER = light-theme
+.BLOCK{
+  &.BLOCK--light-theme{
+    & .BLOCK__ELEMENT{
+		color:crimson;
+		background-color: orangered;
+	}
+	& .BLOCK__ELEMENT{
+		color:cornflowerblue;
+		background-color: orangered;
+	}
+}}
+/*specify for other property
+.BLOCK{
+	&__ELEMENT,&__ELEMENT,&__ELEMENT{
+		font-size: 30px;
+		margin-left: 30px;
+		margin-top: 50px;
+	}
+    &__ELEMENT{
+    	font-size: 25px;
+    	display: block;
+    }
+}
