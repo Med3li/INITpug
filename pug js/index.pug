@@ -1,11 +1,17 @@
 include includes/myVars.pug
+include includes/mixins.pug
 doctype
 html
  head
   title #{title}
   |
   include includes/styles.pug
- body
-  h1 Hello world!
- |
- include includes/scripts.pug
+ body.color-scheme.color-scheme--light-mode
+  .main
+   img(src="img/INITpug logo.png").img-responsive
+   h1 Welcome to INITpug
+   p The nice and clean front-end template for building fast, robust, and adaptable web apps or sites.
+   span Check out the 
+    a(href="https://github.com/Med3li/INITpug" target="_blank") github repository
+   button.color-scheme__mode-changer Let me dark
+  include includes/scripts.pug
