@@ -1,0 +1,27 @@
+1-on home page
+|item 1|              |  |
+|item 2| item 2:1 |+|      ? ( in the middle)
+|item 3|              |  |
+ ^a         ^b          ^c      ^d
+ ^^^^^^^^^^^^^^^e
+^^^^^^^^^^^^^^^^^^f
+color:dark
+e=width:0 opacity:0 
+b=width:0
+c=width:20
+=> if mouse position (client pageX) === d => e width =  c width * 2
+=> on click sur (+) => e width = 380px/2 // (+) => (x)
+=> onclick sur item#{i} => b width = 190px and show -items => e width => 380px
+=>onclick sur + o from . become O (use 2 cercle) and scale on click one geater then the other 
+=====>>>>> IF ANY OF EVENTS ON TOP ACTIVE CARD{MARGIN-TOP BECAME :0 VH}
+var header = document.querySelector('.header');
+var nav = document.querySelector('.navigation-list');
+header.addEventListener('mousemove', function(e){
+if(e.pageX === '300' ){
+nav.style.width = '240px';
+}
+});
+
+2-on docs page navigation become fixed top with github icon on right
+3-add title to the icons
+**navigation height = 100vh
