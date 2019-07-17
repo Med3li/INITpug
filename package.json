@@ -1,6 +1,6 @@
 {
   "name": "initpug",
-  "version": "1.2.3",
+  "version": "1.4.2",
   "main": "index.html",
   "dependencies": {
     "static-server": "^2.2.1",
@@ -18,13 +18,15 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "pug": "^2.0.3",
-    "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.20.1"
+    "run-script-os": "^1.0.7",
+    "webpack-stream": "^5.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start http://localhost:7200/ && gulp && node server.js"
+    "start": "run-script-os && gulp && node server.js",
+    "start:win32": "start http://localhost:7200/",
+    "start:darwin": "open http://localhost:7200/",
+    "start:linux": "xdg-open http://localhost:7200/"
   },
   "author": "example_user",
   "license": "ISC",
